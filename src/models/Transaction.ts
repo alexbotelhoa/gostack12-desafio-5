@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { uuid } from 'uuidv4';
 
 class Transaction {
