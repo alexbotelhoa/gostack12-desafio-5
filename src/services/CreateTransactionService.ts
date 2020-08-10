@@ -18,7 +18,9 @@ class CreateTransactionService {
   public execute({ title, value, type }: Request): Transaction {
     const balance = this.transactionsRepository.getBalance();
 
-    if (type === 'outcome' && (balance.total - value) < 0) throw Error('Negative value!');
+    if (type === 'outcome' && (balance.total - value) < 0) {
+      throw new Error('Negative value!')
+    };
     
     const transaction = this.transactionsRepository.create({
       title, 
